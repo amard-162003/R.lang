@@ -1,0 +1,133 @@
+ 
+PRACTICAL NO – 02 
+NAME – RASAL HARSHAD SAMBHAJI 
+CLASS – MSC PART(1) 
+Q1. 
+> A=function(x,y,mx,my,sx,sy,p){1/(2*pi*sx*sy*sqrt(1-p^2))}*exp((-1/(2*(1-p^2)))*{((x-mx)^
+ 2/sx^2)-(2*p*((x-mx)/sx)*((y-my)/sy))+((y-my)^2/sy^2)}) 
+> parmfrow=c(2,2) 
+> mx=0 
+> my=2 
+> sx=sqrt(2) 
+> sy=sqrt(4) 
+> p=1/(2*sqrt(2)) 
+> stp=0.5 
+> s=matrix(c(sx^2,p*sx*sy,sy^2)) 
+> x=seq(-3*sx,3*sx,stp) 
+> y=seq(-3*sy,3*sy,stp) 
+> z=outer(x,y,function(x,y)A(x,y,mx,my,sx,sy,p)) 
+> filled.contour(x,y,z,xlab=x,ylab=y,main='contour plot for bivarite normal') 
+> persp(x,y,z,theta = 45,phi = 30,main = "densityplot") 
+Q2. 
+> B=function(x,y,mx,my,sx,sy,p){1/(2*pi*sx*sy*sqrt(1-p^2))}*exp((-1/(2*(1-p^2)))*{((x-mx)^
+ 2/sx^2)-(2*p*((x-mx)/sx)*((y-my)/sy))+((y-my)^2/sy^2)}) 
+> parmfrow=c(2,2) 
+> mx=3 
+> my=2 
+> sx=sqrt(7) 
+> sy=sqrt(5) 
+> p=1/(sqrt(7)*sqrt(5)) 
+> stp=0.7 
+> s=matrix(c(sx^2,p*sx*sy,sy^2)) 
+> x=seq(-3*sx,3*sx,stp) 
+> y=seq(-3*sy,3*sy,stp) 
+> z=outer(x,y,function(x,y)A(x,y,mx,my,sx,sy,p)) 
+> filled.contour(x,y,z,xlab=x,ylab=y,main='contour plt for bivarite normal') 
+> persp(x,y,z,theta = 45,phi = 30,main = "densityplot") 
+Q3. 
+> A=function(x,y,mx,my,sx,sy,p){1/(2*pi*sx*sy*sqrt(1-p^2))}*exp((-1/(2*(1-p^2)))*{((x-mx)^
+ 2/sx^2)-(2*p*((x-mx)/sx)*((y-my)/sy))+((y-my)^2/sy^2)}) 
+> parmfrow=c(2,2) 
+> mx=4 
+> my=2 
+> sx=sqrt(2) 
+> sy=sqrt(2) 
+> p=1/(sqrt(2)*sqrt(2)) 
+> stp=0.5 
+> s=matrix(c(sx^2,p*sx*sy,sy^2)) 
+> x=seq(-3*sx,3*sx,stp) 
+> y=seq(-3*sy,3*sy,stp) 
+> z=outer(x,y,function(x,y)A(x,y,mx,my,sx,sy,p)) 
+> filled.contour(x,y,z,xlab=x,ylab=y,main='contour plt for bivarite normal')    
+> persp(x,y,z,theta = 45,phi = 30,main = "densityplot") 
+Q4. 
+data <- data.frame(  
+x1 = c(1889, 2403, 2119, 1645, 1976, 1712, 1943, 2104, 2983, 1745,  
+1710, 2046, 1840, 1867, 1859, 1954, 1325, 1419, 1828, 1725,  
+2276, 1899, 1633, 2061, 1856, 1727, 2168, 1655, 2326, 1490),  
+x2 = c(1651, 2048, 1700, 1627, 1916, 1712, 1685, 1820, 2794, 1600,  
+1591, 1907, 1841, 1685, 1649, 2149, 1170, 1371, 1634, 1594,  
+2189, 1614, 1513, 1867, 1493, 1412, 1896, 1675, 2301, 1382),  
+x3 = c(1561, 2087, 1815, 1110, 1614, 1439, 1271, 1717, 2412, 1384,  
+1518, 1627, 1595, 1493, 1389, 1180, 1002, 1252, 1602, 1313,  
+1547, 1422, 1290, 1646, 1356, 1238, 1701, 1414, 2065, 1214),  
+x4 = c(1778, 2197, 2222, 1533, 1883, 1546, 1671, 1874, 2581, 1508,  
+1667, 1898, 1741, 1678, 1714, 1281, 1176, 1308, 1755, 1646,  
+2111, 1477, 1516, 2037, 1533, 1469, 1834, 1597, 2234, 1284)  
+)  
+> data  
+x1 x2 x3 x4  
+1 1889 1651 1561 1778  
+2 2403 2048 2087 2197  
+3 2119 1700 1815 2222  
+4 1645 1627 1110 1533  
+5 1976 1916 1614 1883  
+6 1712 1712 1439 1546  
+7 1943 1685 1271 1671  
+8 2104 1820 1717 1874  
+9 2983 2794 2412 2581  
+10 1745 1600 1384 1508  
+11 1710 1591 1518 1667  
+12 2046 1907 1627 1898  
+13 1840 1841 1595 1741  
+14 1867 1685 1493 1678  
+15 1859 1649 1389 1714  
+16 1954 2149 1180 1281  
+17 1325 1170 1002 1176  
+18 1419 1371 1252 1308  
+19 1828 1634 1602 1755  
+20 1725 1594 1313 1646  
+21 2276 2189 1547 2111  
+22 1899 1614 1422 1477  
+23 1633 1513 1290 1516  
+24 2061 1867 1646 2037  
+25 1856 1493 1356 1533  
+26 1727 1412 1238 1469  
+27 2168 1896 1701 1834  
+28 1655 1675 1414 1597  
+29 2326 2301 2065 2234  
+30 1490 1382 1214 1284  
+#Shapiro-Wilk normality test  
+shapiro.test(data$x1)  
+> shapiro.test(data$x1)  
+Shapiro-Wilk normality test  
+data: data$x1  
+W = 0.93068, p-value = 0.05118  
+shapiro.test(data$x2)  
+> shapiro.test(data$x2)  
+Shapiro-Wilk normality test  
+data: data$x2  
+W = 0.91274, p-value = 0.01746  
+shapiro.test(data$x3)  
+> shapiro.test(data$x3)  
+Shapiro-Wilk normality test  
+data: data$x3  
+W = 0.93258, p-value = 0.05751  
+shapiro.test(data$x4)  
+> shapiro.test(data$x4)  
+Shapiro-Wilk normality test  
+data: data$x4  
+W = 0.96127, p-value = 0.3337  
+#Shapiro-Wilk Test: This test provides a p-value.  
+A p-value greater than 0.05 typically indicates that the data is not significantly different from a 
+normal distribution (i.e., it is normally distributed).  
+#p-value > 0.05: Fail to reject the null hypothesis;  
+the data may come from a normal distribution.  
+#p-value ≤ 0.05: Reject the null hypothesis;  
+the data is significantly different from a normal distribution.  
+###Conclusion:  
+x1: p-value = 0.05118 > 0.05 Accept null hypothesis. It is normally distributed.  
+x2: p-value = 0.01746 < 0.05 Reject null hypothesis. It is not normally distributed.  
+x3: p-value = 0.05751 > 0.05 Accept null hypothesis. It is normally distributed.  
+x4: p-value = 0.3337 < 0.05 Reject null hypothesis. 
+Conclusion =  It is not normally distributed. 
