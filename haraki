@@ -1,0 +1,108 @@
+Name:-Amar Pradip Desai 
+MSc I statistics 
+Practical No :- 
+> #Q1 
+> m=matrix(c(0,9,3,6,11,9,0,7,5,10,3,7,0,4,2,6,5,9,0,8,11,10,2,8,0),nrow= 5,byrow = TRUE) 
+> m          
+[,1] [,2] [,3] [,4] [,5] 
+[1,]   
+[2,]   
+[3,]   
+[4,]   
+ 0    
+ 9    
+ 3    
+ 6    
+9    3    6   11 
+0    7    5   10 
+7    0    4    2 
+5    9    0    8 
+[5,]   11   10    2    8    0 
+> # single Linkage Method 
+> hc_single=hclust( as.dist(m),method = "single") 
+> hc_single 
+Call: 
+hclust(d = as.dist(m), method = "single") 
+Cluster method   : single  
+Number of objects: 5  
+> #plot dendrogram 
+> plot(hc_single,main = "single linkage dendrogram",xlab ="",ylab = "hights") 
+> # complete Linkage Method 
+> hc_complete=hclust( as.dist(m),method = "complete") 
+> hc_complete 
+Call: 
+hclust(d = as.dist(m), method = "complete") 
+Cluster method   : complete  
+Number of objects: 5  
+> #plot dendrogram 
+> plot(hc_complete,main = "complete linkage dendrogram",xlab ="",ylab = "hights") 
+> # Average Linkage Method 
+> hc_average = hclust( as.dist(m),method = "average") 
+> hc_average 
+Call: 
+hclust(d = as.dist(m), method = "average") 
+Cluster method   : average  
+Number of objects: 5  
+> # plot dendrogram 
+> plot(hc_average,main = "average linkage dendrogram",xlab ="",ylab = "hights") 
+>       
+>  #   Q2 
+>    
+>    
+[1,]   
+[2,]   
+m1=matrix(c(0,1,10,6,1,0,3,5,10,3,0,4,6,5,4,0),nrow= 4,byrow = TRUE) 
+m1      
+[,1] [,2] [,3] [,4] 
+ 0    
+ 1    
+1   10    6 
+0    3    5 
+[3,]   10    3    0    4 
+[4,]   
+ 6    
+5    4    0 
+>      
+>      
+>      
+Call: 
+# single Linkage Method 
+hc_single=hclust( as.dist(m1),method = "single") 
+hc_single 
+hclust(d = as.dist(m1), method = "single") 
+Cluster method   : single  
+Number of objects: 4  
+>      
+>      
+#plot dendrogram 
+plot(hc_single,main = "single linkage dendrogram",xlab ="",ylab = "hights") 
+#comlete linkage 
+>      
+>      
+>      
+Call: 
+# complete Linkage Method 
+hc_complete=hclust( as.dist(m1),method = "complete") 
+hc_complete 
+hclust(d = as.dist(m1), method = "complete") 
+Cluster method   : complete  
+Number of objects: 4  
+>      
+>      
+#plot dendrogram      
+plot(hc_complete,main = "complete linkage dendrogram",xlab ="",ylab = "hights") 
+>      
+>      
+>      
+Call: 
+# Average Linkage Method 
+hc_average=hclust( as.dist(m),method = "average") 
+hc_average 
+hclust(d = as.dist(m), method = "average") 
+Cluster method   : average  
+Number of objects: 5  
+>      
+>       
+>      
+#plot dendrogram 
+plot(hc_average,main = "average linkage dendrogram",xlab ="",ylab = "hights") 
