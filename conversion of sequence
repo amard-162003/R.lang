@@ -1,0 +1,154 @@
+##  Q.1 
+> # define the sequence func on 
+> sequence_fn=func on(n){ 
++   return((-1)^n/n) 
++ } 
+> # generate a large ranges of n value 
+> n_values=1:1000 
+> sequence_values=sequence_fn(n_values)  
+> # plot the sequence 
+> plot(n_values,sequence_values,type="l",col="blue",xlab="n values",ylab="sequence a_n", 
++      main="convergence of sequence a_n") 
+> abline(h=0,col="red",lty=2) 
+## Q.2 
+> # define the sequence func on 
+> sequence_fn=func on(n){ 
++   return((n^2+n)/n^3) 
++ } 
+> # generate a large ranges of n value 
+> n_values=1:1000 
+> sequence_values=sequence_fn(n_values)  
+>  
+> # plot the sequence 
+> plot(n_values,sequence_values,type="l",col="blue",xlab="n values",ylab="sequence a_n", 
++      main="convergence of sequence a_n") 
+> abline(h=0,col="red",lty=2) 
+## Q.3 
+# define the sequence func on 
+> sequence_fn=func on(n){ 
++   return((2*n+3)/(3*n+5)) 
++ } 
+>  
+# generate a large ranges of n value 
+> n_values=1:1000 
+> sequence_values=sequence_fn(n_values)  
+>  
+# plot the sequence 
+> plot(n_values,sequence_values,type="l",col="blue",xlab="n values",ylab="sequence a_n", 
++      main="convergence of sequence a_n") 
+> abline(h=0,col="red",lty=2) 
+>  
+## Q.4 
+># define the sequence func on 
+> sequence_fn=func on(n){ 
++   return((n^2+3*n+2)/(n+1)) 
++ } 
+# generate a large ranges of n value 
+> n_values=1:1000 
+> sequence_values=sequence_fn(n_values)  
+>  
+# plot the sequence 
+> plot(n_values,sequence_values,type="l",col="blue",xlab="n values",ylab="sequence a_n", 
++      main="convergence of sequence a_n") 
+> abline(h=0,col="red",lty=2) 
+## Q5 
+> # define the sequence func on 
+> sequence_fn=func on(n){ 
++   return((1/(n)^2)) 
++ } 
+>  
+> # generate a large ranges of n value 
+> n_values=1:1000 
+> A_n_list=list() 
+> sequence_values=sequence_fn(n_values)  
+>  
+> # plot the sequence 
+> plot(n_values,type="l",col="blue",xlab="n values",ylab="sequence a_n", 
++      main="convergence of sequence a_n") 
+> abline(h=0,col="red",lty=2) 
+>  
+## Q6 
+# Number of sets to consider 
+> n_max =10 
+>  
+# Create a list to store each set A_n 
+> A_n_list=list() 
+>  
+# Populate the list with the sets A_n 
+> for (n in 1:n_max) { 
++   A_n_list[[n]]=1/(1:n) 
++ } 
+>  
+# Plot the sets A_n 
+> plot(c(1, n_max), c(0, 1), type = "n", xlab = "n", ylab = "Elements in A_n",main = "Convergence of 
+the Sequence of Sets A_n") 
+> for (n in 1:n_max) { 
++   points(rep(n, length(A_n_list[[n]])), A_n_list[[n]], pch = 16) 
++ } 
+## Q.7 
+# Func on to define the interval C_n 
+> generate_interval <- func on(n) { 
++   return(c(0, 1/n)) 
++ } 
+# Generate intervals for different values of n 
+> n_values <- 1:100 
+> intervals <- lapply(n_values, generate_interval) 
+>  
+# Extract the right endpoints (1/n) of the intervals 
+> right_endpoints <- sapply(n_values, func on(n) 1/n) 
+>  
+# Plot the right endpoints to visualize convergence to 0 
+> plot(n_values, right_endpoints, type="l", col="blue",  
++      xlab="n", ylab="Right endpoint of [0, 1/n]",  
++      main="Convergence of intervals C_n = [0, 1/n] to {0}") 
+# Print the right endpoint for large n 
+> tail(right_endpoints) 
+[1] 0.01052632 0.01041667 0.01030928 0.01020408 0.01010101 0.01000000 
+>  
+## Q.8 
+>  
+# Func on to generate the set B_n 
+> generate_set <- func on(n) { 
++   return(1:n) 
++ } 
+# Generate sets B_n for different values of n 
+> n_values <- 1:10 
+> sets_list <- lapply(n_values, generate_set) 
+>  
+# Print the sets B_n 
+> sets_list 
+[[1]] 
+[1] 1 
+[[2]] 
+[1] 1 2 
+[[3]] 
+[1] 1 2 3 
+[[4]] 
+[1] 1 2 3 4 
+[[5]] 
+[1] 1 2 3 4 5 
+[[6]] 
+[1] 1 2 3 4 5 6 
+[[7]] 
+[1] 1 2 3 4 5 6 7 
+[[8]] 
+[1] 1 2 3 4 5 6 7 8 
+[[9]] 
+[1] 1 2 3 4 5 6 7 8 9 
+[[10]] 
+[1]  1  2  3  4  5  6  7  8  9 10 
+# Check if B_n is a subset of B_{n+1} for all n 
+> for (n in 1:(length(sets_list) - 1)) { 
++   is_subset <- all(sets_list[[n]] %in% sets_list[[n + 1]]) 
++   print(paste("Is B", n, "a subset of B", n+1, "?", is_subset)) 
++ } 
+[1] "Is B 1 a subset of B 2 ? TRUE" 
+[1] "Is B 2 a subset of B 3 ? TRUE" 
+[1] "Is B 3 a subset of B 4 ? TRUE" 
+[1] "Is B 4 a subset of B 5 ? TRUE" 
+[1] "Is B 5 a subset of B 6 ? TRUE" 
+[1] "Is B 6 a subset of B 7 ? TRUE" 
+[1] "Is B 7 a subset of B 8 ? TRUE" 
+[1] "Is B 8 a subset of B 9 ? TRUE" 
+[1] "Is B 9 a subset of B 10 ? TRUE" 
+>  
