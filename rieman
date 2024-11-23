@@ -1,0 +1,164 @@
+Name :-Amar Pradip Desai 
+Msc I Statistics 
+Practical no:- 
+# Q.1 
+> # define the function 
+> f=function(x) 
++ { 
++   sin(x) 
++ } 
+> # calculate the integral 
+> result=integrate(f,0,pi) 
+> result 
+2 with absolute error < 2.2e-14 
+> # print the result 
+> print(result$value) 
+[1] 2 
+>  
+# Q.2 
+> # define the function 
+> f=function(x) 
++ { 
++   1/(x^2) 
++ } 
+> # To define then intervals 
+> a=1 
+> b=2 
+> n=4 
+> # calculate the width of each subinterval 
+> delta_x=(b-a)/n 
+> delta_x 
+[1] 0.25 
+> # calculate the reiman sum (using right endpoints) 
+> x_values=seq(a=delta_x,b,by=delta_x) 
+> rieman_sum=sum(f(x_values)*delta_x) 
+> print(rieman_sum) 
+[1] 0.0625 
+>  
+> # Q.3 
+> # define the function 
+> f=function(x) 
++ { 
++   (x)^1/2 
++ } 
+> # To define then intervals 
+> a=0 
+> b=4 
+> n=4 
+> # calculate the width of each subinterval 
+> delta_x=(b-a)/n 
+> delta_x 
+[1] 1 
+> # calculate the reiman sum (using right endpoints) 
+> x_values=seq(a=delta_x,b,by=delta_x) 
+> rieman_sum=sum(f(x_values)*delta_x) 
+> print(rieman_sum) 
+[1] 2 
+>  
+> # Q.4 
+> # define the function 
+> f=function(x) 
++ { 
++    
++ } 
+1/x 
+> # To define then intervals 
+> a=1 
+> b=2 
+> n=1000 
+> # calculate the width of each subinterval 
+> delta_x=(b-a)/n 
+> delta_x 
+[1] 0.001 
+> # calculate the reiman sum (using right endpoints) 
+>  
+> x_values=seq(a=delta_x,b,by=delta_x) 
+>  
+> rieman_sum=sum(f(x_values)*delta_x) 
+> print(rieman_sum) 
+[1] 5e-04 
+> # Q.5 
+> # define the function 
+> f=function(x) 
++ { 
++   3*x^2 
++ } 
+> # To define then intervals 
+> a=1 
+> b=4 
+> n=1000 
+> # calculate the width of each subinterval 
+> delta_x=(b-a)/n 
+> delta_x 
+[1] 0.003 
+> # calculate the reiman sum (using right endpoints) 
+>  
+> x_values=seq(a=delta_x,b,by=delta_x) 
+>  
+> rieman_sum=sum(f(x_values)*delta_x) 
+> print(rieman_sum) 
+[1] 0.144 
+# Q6 
+> f=function(x) 
++ {  x^2 
++ } 
+> #partition points 
+> partition=c(0,1,2,3) 
+>  
+> #calculate the width 
+> n=length(partition)-1 
+> n 
+[1] 3 
+> delta_x=diff(partition) 
+> delta_x 
+[1] 1 1 1 
+> #To calculatethe riemann sum (using right endpoints) 
+> riemann_sum=sum(f(partition[-1]*delta_x)) 
+> riemann_sum 
+[1] 14 
+# Q.7 define the function 
+> f=function(x) 
++ { 
++   exp(x) 
++ } 
+> # To define then intervals 
+> a=0 
+> b=1 
+> n=-4 
+> #calculate the width of each subinterval 
+> delta_x=-(b-a)/n 
+> delta_x 
+[1] 0.25 
+> #calculate the reiman sum (using right endpoints) 
+> left_endpoints=seq(a,b-delta_x,by=delta_x) 
+> left_endpoints 
+[1] 0.00 0.25 0.50 0.75 
+> rieman_sum=sum(f(left_endpoints)*delta_x) 
+> print(rieman_sum) 
+[1] 1.512437 
+>  
+# Q.8 
+> f1=function(x) 
++ { 
++   x^4-(2*x^2) 
++ } 
+> a=1 
+> b=5 
+> F_a=f1(a) 
+> F_b=f1(b) 
+> integral_value=F_b-F_a 
+> print(integral_value) 
+[1] 576 
+>  
+> # Q.10 
+> f1=function(x) 
++ { 
++   sin(x) 
++ } 
+> a=0 
+> b=pi 
+> F_a=f1(a) 
+> F_b=f1(b) 
+> integral_value=F_b-F_a 
+> print(integral_value) 
+[1] 1.224606e-16 
